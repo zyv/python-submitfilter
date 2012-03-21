@@ -17,14 +17,14 @@ class TestSubmitFilter(unittest.TestCase):
 
     def test_add_pbs_tag(self):
 
-        cases = glob.glob("{}/*_{}.pbs".format(DATA_DIR, DATA_RES))
+        cases = glob.glob("{0}/*_{1}.pbs".format(DATA_DIR, DATA_RES))
 
         self.assertNotEqual(cases, [], "Can't find example PBS jobs")
         
         for case in cases:
 
             file_good = case
-            file_orig = case.replace("_{}.pbs".format(DATA_RES), ".pbs")
+            file_orig = case.replace("_{0}.pbs".format(DATA_RES), ".pbs")
 
             with open(file_good, "r") as fp:
                 data_good = fp.readlines()
