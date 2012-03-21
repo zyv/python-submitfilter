@@ -1,0 +1,38 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+"""
+Sample TORQUE submission filter script in Python
+
+Copyright (C) 2011 onwards by Yury V. Zaytsev
+
+Free to use and distribute under the terms of the MIT license
+
+From TORQUE documentation:
+
+- Command line arguments passed to qsub are passed as arguments to the submit
+  filter (filter won’t see them in STDIN) in the same order and may be used as
+  needed.
+
+- Exit status of -1 will cause qsub to reject the submission with a message
+  stating that it failed due to administrative policies.
+
+"""
+
+import sys
+
+import submitfilter as sf
+
+def main():
+
+    data = sys.stdin.readlines()
+
+    # Disable e-mail notification by default
+    data = sf.add_pbs_tag(data, "#PBS -m n")
+
+    for line in data:
+        sys.stdout.write(line)
+
+    return 0
+
+if __name__ == "__main__":
+    sys.exit( main() )
