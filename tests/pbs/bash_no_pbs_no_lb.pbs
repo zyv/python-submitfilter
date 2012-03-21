@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "Bash job without PBS tags and newline at EOL"

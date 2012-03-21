@@ -1,0 +1,9 @@
+
+
+
+#PBS -m abe
+#PBS -l mem=16MB
+
+
+echo "Job without interpreter, but with PBS tags and newline at EOL"
+

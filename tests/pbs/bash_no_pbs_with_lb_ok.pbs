@@ -1,0 +1,7 @@
+#!/bin/bash
+@TEST@
+
+echo "Bash job without PBS tags"
+
+
+

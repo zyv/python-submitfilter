@@ -1,0 +1,3 @@
+@TEST@
+
+echo "Job without interpreter / PBS tags and newline at EOL"
